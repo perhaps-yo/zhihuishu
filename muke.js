@@ -14,6 +14,11 @@ function begin () {
       let watchstate = list[i].getAttribute('watchstate')
       if (watchstate === '0' || watchstate === '2') {
         list[i].click(); // 观看视频
+        setTimeout(() => {
+          // console.log(video)
+          let video = document.getElementsByClassName('vjs-tech')[0]
+          video.currentTime = 1
+        }, 5000)
         document.querySelector('.volumeIcon').click(); // 关闭声音
         document.querySelector('.speedTab15').click(); // 1.5倍加速
         document.querySelector('.line1bq').click(); // 标清
