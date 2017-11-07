@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "智慧树视频自动播放",
+  "description": "智慧树视频自动播放，1.5倍速度，标清，无声播放。实现后台自动播放视频。",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "智慧树视频自动播放"
+  },
+  "content_scripts": [{
+    "matches": ["http://online.zhihuishu.com/*"],
+    "js": ["muke.js"]
+  }]
+}
