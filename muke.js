@@ -8,6 +8,7 @@ var video = null,
 setTimeout(() => {
   if (getVideo() === false) { // 获取video元素
     console.log('无法获取video元素, 请刷新页面')
+    window.alert('网速太慢啦，导致无法获取video元素，请刷新页面')
     return false
   }
   play() // 播放视频
@@ -31,6 +32,7 @@ function play () {
         if (video.paused) video.play() // 视频停止的话，继续播放
         if (getVolumn() === false) { // 网速太慢的话，那下面的功能无法用了
           console.log('无法获取功能控件，请刷新页面')
+          window.alert('网速太慢啦，导致无法获取video元素，请刷新页面')
           return
         }
         document.querySelector('.volumeIcon').click() // 关闭声音
