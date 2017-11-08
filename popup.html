@@ -1,40 +1,18 @@
-<!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Getting Started Extension's Popup</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>智慧树刷课</title>
   <style>
     body {
-      font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-      font-size: 100%;
-    }
-
-    #status {
-      /* avoid an excessively wide status text */
-      white-space: pre;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      max-width: 400px;
+      width: 200px;
+      /* min-height: 100px; */
     }
   </style>
-
-  <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
-  <script src="popup.js"></script>
 </head>
-
 <body>
-  <div id="status"></div>
-  <img id="image-result" hidden>
+  <p>智慧树刷课插件，自动播放下一个视频，1.5倍加速，标清无声播放</p>
 </body>
-
 </html>
