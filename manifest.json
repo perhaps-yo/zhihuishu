@@ -10,7 +10,8 @@
   },
   "content_scripts": [{
     "matches": ["http://online.zhihuishu.com/*"],
-    "js": ["content.js"]
+    "js": ["content.js"],
+    "run_at": "document_end"
   }],
   "web_accessible_resources": ["muke.js"]
 }
