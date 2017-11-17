@@ -2,7 +2,8 @@ var video = null,
   list = 0,
   len = 0,
   count = 0,
-  volumn = null
+  volumn = null,
+  close = null
 
 // 主函数，3s后启动脚本
 window.onload =  function () {
@@ -20,6 +21,10 @@ window.onload =  function () {
         window.location.reload()
       }
     }, 10000)
+    setInterval(() => { // 每10s检查视频是否播放完毕
+      close = document.querySelector('.popboxes_close')
+      if(close !== null) close.click()
+    }, 10000)
     console.log('脚本成功运行中...')
   }, 3000)
 }
@@ -30,7 +35,8 @@ function play () {
   len = list.length
   for (let i = 0; i < len; i++) {
     let watchstate = list[i].getAttribute('watchstate')
-    if (watchstate === '0' || watchstate === '1') {
+    let id = list[i].getAttribute('id')
+    if ((watchstate === '0' || watchstate === '2') && id !== 'video-0') {
       list[i].click(); // 观看视频
       setTimeout(() => {
         video.currentTime = 0
