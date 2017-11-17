@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "智慧树视频自动播放",
-  "description": "智慧树视频自动播放，1.5倍速度，标清，无声播放。实现后台自动播放视频。",
+  "description": "智慧树视频自动播放下一集，1.5倍速度，标清，无声播放。",
   "version": "1.0",
   "browser_action": {
     "default_icon": "icon.png",
@@ -13,5 +13,5 @@
     "js": ["content.js"],
     "run_at": "document_end"
   }],
-  "web_accessible_resources": ["muke.js"]
+  "web_accessible_resources": ["zhihuishu.js"]
 }
