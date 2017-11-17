@@ -1,4 +1,4 @@
-# 智慧树视频自动播放
+# 智慧树视频刷课插件
 
 智慧树视频不能在播放完后自动播放下一集，并且偶尔会弹出个对话框，看看你人在不在电脑旁，我想着利用所学的前端知识，写个插件，帮助自己刷课，所以就有了这个chrome插件。
 
@@ -17,26 +17,26 @@
 
 1、打开chrome浏览器，来到 [github.com/perhaps-yo/zhihuishu](github.com/perhaps-yo/zhihuishu) 界面，下载插件源码
 
-![下载插件]()
+![下载插件](./images/download.png)
 
 解压后的源码放到自己喜欢的目录
 
 2、chrome浏览器输入 `chrome://extensins` ，来到扩展程序页面。按步骤：勾选`开发者模式` -> 单击`加载已解压的扩展程序`，选择刚刚源码的位置 -> 勾选`已启用`。效果如下图：
 
-![安装插件]()
+![安装插件](./images/add.png)
 
 脚本安装成功，准备刷课！
 
-3、来到智慧树视频网站 [online.zhihuishu.com](http://online.zhihuishu.com)，登录后，到视频页面，就会自动开始刷课啦～
+3、来到智慧树视频网站 [online.zhihuishu.com](http://online.zhihuishu.com)，登录后，到需要刷课的视频页面，就会自动开始刷课啦～
 
-![自动刷课]()
+![自动刷课](./images/play.png)
 
 会看到
 
 ## 二、遇见的问题
 
 - Q: 来到智慧树视频网站后，没能实现 `1.5倍速度，标清，无声播放`？
-  - A: 按 `f5` 刷新页面。
+- A: 按 `f5` 刷新页面。
 
 ## 三、License
 
