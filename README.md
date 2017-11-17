@@ -3,7 +3,9 @@
 初衷：
 
 - 智慧树视频不能在播放完后自动播放下一集，并且偶尔会弹出个对话框，看看你在不在电脑旁看视频! 我想着利用所学的前端知识，写个插件，帮助自己刷课，所以就有了这个chrome插件
-- 喜欢这个插件的话，请点star，谢谢
+- 喜欢这个插件的话，请点右上角的 `star`，谢谢
+
+## 一、功能和工具
 
 功能：
 
@@ -16,7 +18,7 @@
 
 - chrome55+ (我用了es7的语法: `async/await` , 只有chrome55+的js引擎才能解析)
 
-## 一、使用方法
+## 二、使用方法
 
 1、打开chrome浏览器，来到 [github.com/perhaps-yo/zhihuishu](github.com/perhaps-yo/zhihuishu) 界面，下载插件源码
 
@@ -34,11 +36,11 @@
 
 ![自动刷课](./images/play.png)
 
-## 二、遇见的问题
+## 三、遇见的问题
 
 - Q: 来到智慧树视频网站后，没能实现 `1.5倍速度，标清，无声播放`？
 - A: 按 `f5` 刷新页面。
 
-## 三、License
+## 四、License
 
 [MIT](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/LICENSE).
