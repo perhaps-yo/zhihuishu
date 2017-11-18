@@ -66,7 +66,7 @@ async function background() {
  * @returns void
  */
 function specialEffect() {
-  video.currentTime = 0 // 视频重新播放
+  video.currentTime = 2 // 视频重新播放
   if (video.paused && typeof video.play === 'function') video.play() // 视频停止的话，继续播放
   getElement('volumn').click() // 关闭声音
   getElement('speedTab').click() // 1.5倍加速
