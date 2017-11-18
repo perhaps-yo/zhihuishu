@@ -56,7 +56,7 @@ async function background() {
   }, 10000)
   // 每10s检查是否弹出'测试'对话框，并关闭
   setInterval(() => {
-    close = document.querySelector('.popboxes_close')
+    close = getElement('close')
     if(close !== null) close.click()
   }, 10000)
 }
@@ -70,7 +70,7 @@ function specialEffect() {
   if (video.paused && typeof video.play === 'function') video.play() // 视频停止的话，继续播放
   getElement('volumn').click() // 关闭声音
   getElement('speedTab').click() // 1.5倍加速
-  getElement('sharpness').click() // 标清
+  // getElement('sharpness').click() // 标清
 }
 
 
@@ -103,6 +103,10 @@ function getElement(ele) {
     case 'sharpness': { // 视频的清晰度控件
       let sharpness = document.querySelector('.line1bq')
       return sharpness
+    }
+    case 'close': { // '测试'对话框关闭按钮
+      let close = document.querySelector('.popboxes_close')
+      return close
     }
   }
 }
