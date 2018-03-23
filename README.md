@@ -9,7 +9,7 @@
 
 功能：
 
-- 只对智慧树视频网站有效(`http://online.zhihuishu.com/`)
+- 只对智慧树视频网站有效(`http://online.zhihuishu.com/onlineSchool/student/index`)
 - 播放视频时实现：1.5倍速度，标清，无声播放
 - 自动播放视频的下一集
 - 对偶尔弹出的`测试`对话款进行关闭处理
@@ -32,7 +32,7 @@
 
 脚本安装成功，准备刷课！
 
-3、来到智慧树视频网站 [online.zhihuishu.com](http://online.zhihuishu.com)，登录后，到需要刷课的视频页面，就会自动开始刷课啦～
+3、来到智慧树视频网站 [http://online.zhihuishu.com/onlineSchool/student/index](http://online.zhihuishu.com/onlineSchool/student/index)，登录后，到需要刷课的视频页面，就会自动开始刷课啦～
 
 ![自动刷课](./images/play.png)
 
