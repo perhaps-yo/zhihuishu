@@ -9,7 +9,7 @@
     "default_title": "智慧树视频刷课插件"
   },
   "content_scripts": [{
-    "matches": ["http://online.zhihuishu.com/*"],
+    "matches": ["*://*.zhihuishu.com/*"],
     "js": ["content.js"],
     "run_at": "document_end"
   }],
