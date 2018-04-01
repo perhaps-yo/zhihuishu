@@ -8,7 +8,7 @@
 后续：
 
 - 2017年12月初，插件写完。
-- 今天是2018年3月31号，代码第一次更新完毕。添加了视频教程。
+- 2018年3月31号，代码第一次更新完毕。添加了视频教程。
 
 下面是教程。
 
@@ -53,7 +53,12 @@
 
 ## 三、视频教程
 
-正在录制中。。
+[https://v.qq.com/x/page/p06190a8lhy.html](https://v.qq.com/x/page/p06190a8lhy.html)
+
+<video id="video" controls="" preload="none">
+  <source id="ogv" src="https://v.qq.com/x/page/p06190a8lhy.html">
+  <p>Your user agent does not support the HTML5 Video element.</p>
+</video>
 
 ## 四、遇见的问题
 
