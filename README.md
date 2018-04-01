@@ -55,11 +55,6 @@
 
 [https://v.qq.com/x/page/p06190a8lhy.html](https://v.qq.com/x/page/p06190a8lhy.html)
 
-<video id="video" controls="" preload="none">
-  <source id="ogv" src="https://v.qq.com/x/page/p06190a8lhy.html">
-  <p>Your user agent does not support the HTML5 Video element.</p>
-</video>
-
 ## 四、遇见的问题
 
 - Q: 来到智慧树视频网站后，没能实现 `1.5倍速度，标清，无声播放`？
