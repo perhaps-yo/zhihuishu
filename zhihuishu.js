@@ -15,6 +15,7 @@ window.onload = function () {
 async function begin() {
   let list = getElement('list') // 整个视频播放列表
   let video = getElement('video') // video元素
+  if (list === null || video === null) return false
   await playVideo(list, video) // 获取video后，按要求播放视频
   background() // 隔10s就检查视频是否播放完毕，是否弹出'测试'对话框
   console.log('脚本成功运行中...')
@@ -87,19 +88,19 @@ function getElement(ele) {
     case 'list':
       {
         let list = document.getElementById('chapterList').getElementsByTagName('li')
-        if (list === null) window.alert('网速太慢啦，无法获取视频播放列表，请刷新页面')
+        if (list === null) console.log('网速太慢啦，无法获取视频播放列表，请刷新页面')
         return list
       }
     case 'video':
       {
         let video = document.querySelector('.vjs-tech')
-        if (video === null) window.alert('网速太慢啦，无法获取video元素，请刷新页面')
+        if (video === null) console.log('网速太慢啦，无法获取video元素，请刷新页面')
         return video
       }
     case 'volumn':
       { // 视频的声音控件
         let volumn = document.querySelector('.volumeIcon')
-        if (volumn === null) window.alert('网速太慢啦，无法获取功能控件，请刷新页面')
+        if (volumn === null) console.log('网速太慢啦，无法获取功能控件，请刷新页面')
         return volumn
       }
     case 'speedTab':
