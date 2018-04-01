@@ -9,7 +9,7 @@
  * dom 加载完毕才开始执行脚本
  */
 window.onload = function () {
-  begin()
+  setTimeout(() => begin(), 3000)
 }
 
 async function begin() {
@@ -36,7 +36,7 @@ async function playVideo(list, video) {
           setTimeout(() => {
             specialEffect(video)
             resolve()
-          }, 3000)
+          }, 7000)
         })
       }
     }
@@ -87,7 +87,7 @@ function getElement(ele) {
     case 'list':
       {
         let list = document.getElementById('chapterList').getElementsByTagName('li')
-        if (list === null) window.alert('网速太慢啦，无法视频播放列表，请刷新页面')
+        if (list === null) window.alert('网速太慢啦，无法获取视频播放列表，请刷新页面')
         return list
       }
     case 'video':
