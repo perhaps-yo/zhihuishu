@@ -9,7 +9,7 @@
  * dom 加载完毕才开始执行脚本
  */
 window.onload = function () {
-  setTimeout(() => begin(), 3000)
+  setTimeout(() => begin(), 5000)
 }
 
 async function begin() {
@@ -36,7 +36,7 @@ async function playVideo(list, video) {
           setTimeout(() => {
             specialEffect(video)
             resolve()
-          }, 7000)
+          }, 5000)
         })
       }
     }
