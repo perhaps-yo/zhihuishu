@@ -15,8 +15,9 @@ window.onload = function () {
 async function begin() {
   let list = getElement('list') // 整个视频播放列表
   let video = getElement('video') // video元素
-  if (list === null || video === null) return false
-  await playVideo(list, video) // 获取video后，按要求播放视频
+  if (list !== null && video !== null) {
+    await playVideo(list, video) // 获取video后，按要求播放视频
+  }
   background() // 隔10s就检查视频是否播放完毕，是否弹出'测试'对话框
   console.log('脚本成功运行中...')
 }
@@ -53,9 +54,12 @@ async function playVideo(list, video) {
 function specialEffect(video) {
   video.currentTime = 2 // 视频重新播放
   if (video.paused && typeof video.play === 'function') video.play() // 视频停止的话，继续播放
-  getElement('volumn').click() // 关闭声音
-  getElement('speedTab').click() // 1.5倍加速
-  getElement('sharpness').click() // 标清
+  let volumn = getElement('volumn')
+  let speedTab = getElement('speedTab')
+  let sharpness = getElement('sharpness')
+  if (volumn !== null) volumn.click() // 关闭声音
+  if (speedTab !== null) speedTab.click() // 1.5倍加速
+  if (sharpness !== null) sharpness.click() // 标清
 }
 
 /**
