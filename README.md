@@ -41,7 +41,7 @@
 
 ![下载chrome](./images/download-chrome.png)
 
-2、打开chrome浏览器，来到 [github.com/perhaps-yo/zhihuishu](github.com/perhaps-yo/zhihuishu) 界面，也就是当前页面，下载插件源码
+2、打开chrome浏览器，来到 [github.com/perhaps-yo/zhihuishu](https://github.com/perhaps-yo/zhihuishu) 界面，也就是当前页面，下载插件源码
 
 ![下载插件](./images/download.png)
 
