@@ -13,11 +13,11 @@ window.onload = function () {
 }
 
 async function begin() {
-  // 100s内获取播放列表，若失败，则插件不能使用
+  // 60s内获取播放列表，若失败，则插件不能使用
   let list = getElement('list') // 整个视频播放列表
   let count = 0
   while (1) {
-    if (list !== null || count >= 20) break
+    if (list !== null || count >= 12) break
     count++
     await wait1s(5)
     list = getElement('list')
@@ -26,12 +26,12 @@ async function begin() {
     playVideo(list)
   }
 
-  // 100s内获取video元素，若失败，则插件不能使用
+  // 60s内获取video元素，若失败，则插件不能使用
   await wait1s(5)
   let video = getElement('video') // video元素
   count = 0
   while (1) {
-    if (video !== null || count >= 20) break
+    if (video !== null || count >= 12) break
     count++
     await wait1s(5)
     video = getElement('video')
