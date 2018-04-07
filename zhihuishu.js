@@ -14,8 +14,6 @@ window.onload = function () {
 
 async function begin() {
   let list = getElement('list') // 整个视频播放列表
-  let video = getElement('video') // video元素
-  // 100s内获取播放列表，若失败，则插件不能使用
   let count = 0
   while (1) {
     if (list !== null || count >= 10) break
@@ -26,10 +24,22 @@ async function begin() {
   if (list !== null) { // 播放视频
     playVideo(list)
   }
-  if (video !== null) { // 特殊效果重新播放视频
-    specialEffect(video)
+
+  // 100s内获取播放列表，若失败，则插件不能使用
+  await wait1s(5)
+  let video = getElement('video') // video元素
+  while (1) {
+    if (video !== null || count >= 10) break
+    count++
+    await wait1s(10)
+    video = getElement('video')
   }
-  background() // 隔10s就检查视频是否播放完毕，是否弹出'测试'对话框
+  if (video !== null) { // 特殊效果重新播放视频
+    await specialEffect(video)
+  }
+
+  // 隔10s就检查视频是否播放完毕，是否弹出'测试'对话框
+  background()
   console.log('脚本成功运行中...')
 }
 
