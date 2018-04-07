@@ -35,6 +35,7 @@ async function begin() {
 
 /**
  * 播放视频
+ * @param {Array} list 视频播放列表
  * @returns void
  */
 function playVideo(list) {
@@ -51,6 +52,7 @@ function playVideo(list) {
 
 /**
  * 按要求播放视频: 1.5倍速度，标清，无声播放
+ * @param {Element} video 视频元素
  * @returns void
  */
 async function specialEffect(video) {
@@ -139,7 +141,8 @@ function getElement(ele) {
 
 /**
  * 延时函数
- * @param {num} sec 
+ * @param {number} sec 延时多少秒
+ * @returns {Promise} 异步执行
  */
 async function wait1s(sec) {
   return new Promise(resolve => {
