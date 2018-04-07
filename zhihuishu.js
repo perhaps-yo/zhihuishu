@@ -78,7 +78,7 @@ async function specialEffect(video) {
         let sharpness = getElement('sharpness')
         if (volumn !== null) volumn.click() // 关闭声音
         if (speedTab !== null) speedTab.click() // 1.5倍加速
-        if (sharpness !== null) sharpness.click() // 标清
+        // if (sharpness !== null) sharpness.click() // 标清
         resolve()
       }, 3000)
     })
