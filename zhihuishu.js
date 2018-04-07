@@ -13,25 +13,27 @@ window.onload = function () {
 }
 
 async function begin() {
+  // 100s内获取播放列表，若失败，则插件不能使用
   let list = getElement('list') // 整个视频播放列表
   let count = 0
   while (1) {
-    if (list !== null || count >= 10) break
+    if (list !== null || count >= 20) break
     count++
-    await wait1s(10)
+    await wait1s(5)
     list = getElement('list')
   }
   if (list !== null) { // 播放视频
     playVideo(list)
   }
 
-  // 100s内获取播放列表，若失败，则插件不能使用
+  // 100s内获取video元素，若失败，则插件不能使用
   await wait1s(5)
   let video = getElement('video') // video元素
+  count = 0
   while (1) {
-    if (video !== null || count >= 10) break
+    if (video !== null || count >= 20) break
     count++
-    await wait1s(10)
+    await wait1s(5)
     video = getElement('video')
   }
   if (video !== null) { // 特殊效果重新播放视频
@@ -78,7 +80,7 @@ async function specialEffect(video) {
         if (speedTab !== null) speedTab.click() // 1.5倍加速
         // if (sharpness !== null) sharpness.click() // 标清
         resolve()
-      }, 5000)
+      }, 3000)
     })
   } catch (error) {
     console.log(error)
