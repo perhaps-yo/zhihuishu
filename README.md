@@ -11,14 +11,14 @@
 
 实现的功能：
 
-- 只对智慧树视频网站有效(`http://online.zhihuishu.com/onlineSchool/student/index`)
-- 自动播放视频的下一集
+- 只对智慧树网站有效(`http://online.zhihuishu.com/onlineSchool/student/index`)
+- 自动播放视频下一集
 - 关闭偶尔弹出的`测试`对话框
-- 播放视频时实现：1.5倍速度，无声播放
+- 播放视频时：1.5倍，无声播放
 
 未实现的功能：
 
-- 单元测试(这个还是需要自己做的！)
+- 单元测试
 - "标清"播放
 
 需要的工具：
