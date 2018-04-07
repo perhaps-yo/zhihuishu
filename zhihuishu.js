@@ -75,7 +75,7 @@ async function specialEffect(video) {
         if (video.paused && typeof video.play === 'function') video.play() // 视频停止的话，继续播放
         let volumn = getElement('volumn')
         let speedTab = getElement('speedTab')
-        let sharpness = getElement('sharpness')
+        // let sharpness = getElement('sharpness')
         if (volumn !== null) volumn.click() // 关闭声音
         if (speedTab !== null) speedTab.click() // 1.5倍加速
         // if (sharpness !== null) sharpness.click() // 标清
