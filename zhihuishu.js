@@ -15,8 +15,19 @@ window.onload = function () {
 async function begin() {
   let list = getElement('list') // 整个视频播放列表
   let video = getElement('video') // video元素
-  if (list !== null && video !== null) {
-    await playVideo(list, video) // 获取video后，按要求播放视频
+  // 100s内获取播放列表，若失败，则插件不能使用
+  let count = 0
+  while (1) {
+    if (list !== null || count >= 10) break
+    count++
+    await wait1s(10)
+    list = getElement('list')
+  }
+  if (list !== null) { // 播放视频
+    playVideo(list)
+  }
+  if (video !== null) { // 特殊效果重新播放视频
+    specialEffect(video)
   }
   background() // 隔10s就检查视频是否播放完毕，是否弹出'测试'对话框
   console.log('脚本成功运行中...')
@@ -26,24 +37,15 @@ async function begin() {
  * 播放视频
  * @returns void
  */
-async function playVideo(list, video) {
-  try {
-    for (let i = 0, len = list.length; i < len; i++) {
-      let watchstate = list[i].getAttribute('watchstate')
-      let id = list[i].getAttribute('id')
-      // 视频没被播放过并且不是标题行
-      if ((watchstate === '0' || watchstate === '2') && id !== 'video-0') {
-        list[i].click() // 播放视频
-        return new Promise((resolve) => { // 3s后按要求播放视频
-          setTimeout(() => {
-            specialEffect(video)
-            resolve()
-          }, 5000)
-        })
-      }
+function playVideo(list) {
+  for (let i = 0, len = list.length; i < len; i++) {
+    let watchstate = list[i].getAttribute('watchstate')
+    let id = list[i].getAttribute('id')
+    // 视频没被播放过并且不是标题行
+    if ((watchstate === '0' || watchstate === '2') && id !== 'video-0') {
+      list[i].click() // 播放视频
+      return true
     }
-  } catch (error) {
-    console.log(error)
   }
 }
 
@@ -51,15 +53,24 @@ async function playVideo(list, video) {
  * 按要求播放视频: 1.5倍速度，标清，无声播放
  * @returns void
  */
-function specialEffect(video) {
-  video.currentTime = 2 // 视频重新播放
-  if (video.paused && typeof video.play === 'function') video.play() // 视频停止的话，继续播放
-  let volumn = getElement('volumn')
-  let speedTab = getElement('speedTab')
-  let sharpness = getElement('sharpness')
-  if (volumn !== null) volumn.click() // 关闭声音
-  if (speedTab !== null) speedTab.click() // 1.5倍加速
-  // if (sharpness !== null) sharpness.click() // 标清
+async function specialEffect(video) {
+  try {
+    return new Promise((resolve) => { // 3s后按要求播放视频
+      setTimeout(() => {
+        video.currentTime = 2 // 视频重新播放
+        if (video.paused && typeof video.play === 'function') video.play() // 视频停止的话，继续播放
+        let volumn = getElement('volumn')
+        let speedTab = getElement('speedTab')
+        let sharpness = getElement('sharpness')
+        if (volumn !== null) volumn.click() // 关闭声音
+        if (speedTab !== null) speedTab.click() // 1.5倍加速
+        // if (sharpness !== null) sharpness.click() // 标清
+        resolve()
+      }, 5000)
+    })
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 /**
@@ -124,4 +135,16 @@ function getElement(ele) {
         return close
       }
   }
+}
+
+/**
+ * 延时函数
+ * @param {num} sec 
+ */
+async function wait1s(sec) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve()
+    }, sec * 1000)
+  })
 }
