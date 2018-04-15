@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "智慧树视频刷课插件",
-  "description": "智慧树视频自动播放下一集，1.5倍速度，标清，无声播放。",
+  "name": "智慧树刷课插件",
+  "description": "智慧树视频自动播放下一集，1.5倍速度，无声播放。",
   "version": "1.0",
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html",
-    "default_title": "智慧树视频刷课插件"
+    "default_title": "智慧树刷课插件"
   },
   "content_scripts": [{
     "matches": ["*://*.zhihuishu.com/*"],
