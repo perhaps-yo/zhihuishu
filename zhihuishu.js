@@ -2,7 +2,7 @@
  * @file zhihuishu.js
  * @author perhaps(perhapszql@gmail.com) 
  * @date 2017-11-17
- * @description 智慧树视频自动播放下一集，并以1.5倍速度，标清，无声播放
+ * @description 智慧树视频自动播放下一集，并以1.5倍速度，无声播放
  */
 
 /**
@@ -12,23 +12,29 @@ window.onload = function () {
   setTimeout(() => begin(), 5000)
 }
 
+/**
+ * 主程序
+ */
 async function begin() {
-  // 60s内获取播放列表，若失败，则插件不能使用
-  let list = getElement('list') // 整个视频播放列表
+  let list = null // 整个视频播放列表
+  let video = null // video播放器
   let count = 0
+
+  // 60s内获取播放列表，若失败，则插件不能使用
+  list = getElement('list')
   while (1) {
     if (list !== null || count >= 12) break
     count++
     await wait1s(5)
     list = getElement('list')
   }
-  if (list !== null) { // 播放视频
+  if (list !== null) { // 播放下一集
     playVideo(list)
   }
 
   // 60s内获取video元素，若失败，则插件不能使用
   await wait1s(5)
-  let video = getElement('video') // video元素
+  video = getElement('video')
   count = 0
   while (1) {
     if (video !== null || count >= 12) break
@@ -46,7 +52,7 @@ async function begin() {
 }
 
 /**
- * 播放视频
+ * 自动播放下一集
  * @param {Array} list 视频播放列表
  * @returns void
  */
@@ -63,7 +69,7 @@ function playVideo(list) {
 }
 
 /**
- * 按要求播放视频: 1.5倍速度，标清，无声播放
+ * 按要求播放视频: 1.5倍速度，无声播放
  * @param {Element} video 视频元素
  * @returns void
  */
@@ -97,53 +103,54 @@ function background() {
     let video = getElement('video') // 需要不断的获取video元素
     if (video.ended) {
       console.log('正在刷新页面...')
+      wait1s(1)
       window.location.reload()
     }
   }, 10000)
   // 每10s检查是否弹出'测试'对话框，并关闭
   setInterval(() => {
-    let close = getElement('close') // 偶尔弹出的对话框的关闭按钮
+    let close = getElement('close') // 对话框的关闭按钮
     if (close !== null) close.click()
   }, 10000)
 }
 
 /**
  * 获取指定元素
- * @param {string} ele 指定的元素
+ * @param {string} ele 指定的元素名称
  * @returns {Element} 返回指定元素
  */
 function getElement(ele) {
   switch (ele) {
     case 'list':
-      {
+      { // 视频列表
         let list = document.getElementById('chapterList').getElementsByTagName('li')
         if (list === null) console.log('网速太慢啦，无法获取视频播放列表，请刷新页面')
         return list
       }
     case 'video':
-      {
+      { // 播放器
         let video = document.querySelector('.vjs-tech')
         if (video === null) console.log('网速太慢啦，无法获取video元素，请刷新页面')
         return video
       }
     case 'volumn':
-      { // 视频的声音控件
+      { // 播放器的声音控件
         let volumn = document.querySelector('.volumeIcon')
         if (volumn === null) console.log('网速太慢啦，无法获取功能控件，请刷新页面')
         return volumn
       }
     case 'speedTab':
-      { // 视频的速度控件
+      { // 播放器的速度控件
         let speedTab = document.querySelector('.speedTab15')
         return speedTab
       }
     case 'sharpness':
-      { // 视频的清晰度控件
+      { // 播放器的清晰度控件
         let sharpness = document.querySelector('.line1bq')
         return sharpness
       }
     case 'close':
-      { // '测试'对话框关闭按钮
+      { // '测试'对话框的关闭按钮
         let close = document.querySelector('.popboxes_close')
         // let close = document.querySelector('.popbtn_cancel')
         return close
