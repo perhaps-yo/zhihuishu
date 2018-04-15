@@ -6,7 +6,7 @@
  */
 
 /**
- * dom 加载完毕才开始执行脚本
+ * dom 加载完毕的5s后才开始执行脚本
  */
 window.onload = function () {
   setTimeout(() => begin(), 5000)
