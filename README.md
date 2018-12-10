@@ -43,7 +43,7 @@
 
 脚本安装成功，准备刷课！
 
-4、来到智慧树视频网站 [http://online.zhihuishu.com/onlineSchool/student/index](http://online.zhihuishu.com/onlineSchool/student/index)，登录后，到需要刷课的视频页面，就会自动开始刷课啦～
+4、来到智慧树视频网站 [https://passport.zhihuishu.com/login](https://passport.zhihuishu.com/login)，登录后，到需要刷课的视频页面，就会自动开始刷课啦～
 
 ![自动刷课](./images/play.png)
 
