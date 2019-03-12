@@ -110,7 +110,13 @@ function background() {
   // 每10s检查是否弹出'测试'对话框，并关闭
   setInterval(() => {
     let close = getElement('close') // 对话框的关闭按钮
-    if (close !== null) close.click()
+    if (close !== null) {
+      let choose = getElement('choose')
+      if (choose) {
+        choose.click()
+      }
+      close.click()
+    }
   }, 10000)
 }
 
@@ -154,6 +160,15 @@ function getElement(ele) {
         let close = document.querySelector('.popboxes_close')
         // let close = document.querySelector('.popbtn_cancel')
         return close
+      }
+    case 'choose':
+      {
+        let chooseDiv = document.querySelector('.answerOption')
+        let chooseInput;
+        if(chooseDiv) {
+          chooseInput = chooseDiv.getElementsByTagName('input')[0]
+        }
+        return chooseInput
       }
   }
 }
