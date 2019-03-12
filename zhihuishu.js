@@ -114,6 +114,7 @@ function background() {
       let choose = getElement('choose')
       if (choose) {
         choose.click()
+        console.log('已关闭了测试弹窗')
       }
       close.click()
     }
