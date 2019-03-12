@@ -31,23 +31,23 @@
 
 1、下载最新版chrome浏览器，下载地址：[https://www.google.cn/chrome/](https://www.google.cn/chrome/)
 
-![下载chrome](./images/download-chrome.png)
+![下载chrome](https://github.com/perhaps-yo/knowledge/blob/master/2019/zhihuishu/images/download-chrome.png?raw=true)
 
 2、打开chrome浏览器，来到 [https://github.com/perhaps-yo/zhihuishu](https://github.com/perhaps-yo/zhihuishu) 界面，也就是当前页面，下载插件源码
 
-![下载插件](./images/download.png)
+![下载插件](https://github.com/perhaps-yo/knowledge/blob/master/2019/zhihuishu/images/download.png?raw=true)
 
 解压后的源码放到自己喜欢的目录
 
 3、chrome浏览器输入 `chrome://extensions` ，来到扩展程序页面。按步骤：勾选`开发者模式` -> 单击`加载已解压的扩展程序`，选择源码的位置 -> 勾选`已启用`。效果如下图：
 
-![安装插件](./images/add.png)
+![安装插件](https://github.com/perhaps-yo/knowledge/blob/master/2019/zhihuishu/images/add.png?raw=true)
 
 脚本安装成功，准备刷课！
 
 4、来到智慧树视频网站 [https://passport.zhihuishu.com/login](https://passport.zhihuishu.com/login)，登录后，到需要刷课的视频页面，就会自动开始刷课啦～
 
-![自动刷课](./images/play.png)
+![自动刷课](https://github.com/perhaps-yo/knowledge/blob/master/2019/zhihuishu/images/play.png?raw=true)
 
 ## 三、视频教程
 
@@ -64,4 +64,4 @@
 
 ## 五、License
 
-[MIT](https://github.com/aspnetboilerplate/aspnetboilerplate/blob/dev/LICENSE).
+[MIT](./LICENSE).
