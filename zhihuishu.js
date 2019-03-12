@@ -110,13 +110,15 @@ function background() {
   // 每10s检查是否弹出'测试'对话框，并关闭
   setInterval(() => {
     let close = getElement('close') // 对话框的关闭按钮
-    if (close !== null) {
-      let choose = getElement('choose')
-      if (choose) {
-        choose.click()
-        console.log('已关闭了测试弹窗')
+    let choose = getElement('choose')
+    if (choose) {
+      choose.click()
+      if (close) {
+        close.click()
       }
-      close.click()
+      console.log('已关闭了测试弹窗')
+    } else {
+      console.log('答题失败')
     }
   }, 10000)
 }
