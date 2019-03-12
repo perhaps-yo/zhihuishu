@@ -111,13 +111,12 @@ function background() {
   setInterval(() => {
     let close = getElement('close') // 对话框的关闭按钮
     let choose = getElement('choose')
-    if (choose) {
+    if (choose && close) {
       choose.click()
-      if (close) {
-        close.click()
-      }
+      close.click()
       console.log('已关闭了测试弹窗')
-    } else {
+    }
+    if (close && !choose) {
       console.log('答题失败')
     }
   }, 10000)
@@ -166,10 +165,14 @@ function getElement(ele) {
       }
     case 'choose':
       {
-        let chooseDiv = document.querySelector('.answerOption')
-        let chooseInput;
-        if(chooseDiv) {
-          chooseInput = chooseDiv.getElementsByTagName('input')[0]
+        let chooseInput
+        let chooseDiv
+        let iframeContent = document.querySelector('#tmDialog_iframe')
+        if (iframeContent) {
+          chooseDiv = iframeContent.contentWindow.document.querySelector('.answerOption')
+          if(chooseDiv) {
+            chooseInput = chooseDiv.getElementsByTagName('input')[0]
+          }
         }
         return chooseInput
       }
