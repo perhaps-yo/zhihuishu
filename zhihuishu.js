@@ -1,6 +1,6 @@
 /**
  * @file zhihuishu.js
- * @author perhaps(perhapszql@gmail.com) 
+ * @author perhaps(perhapszql@gmail.com)
  * @date 2017-11-17
  * @description 智慧树视频自动播放下一集，并以1.5倍速度，无声播放
  */
@@ -169,9 +169,19 @@ function getElement(ele) {
         let chooseDiv
         let iframeContent = document.querySelector('#tmDialog_iframe')
         if (iframeContent) {
-          chooseDiv = iframeContent.contentWindow.document.querySelector('.answerOption')
-          if(chooseDiv) {
-            chooseInput = chooseDiv.getElementsByTagName('input')[0]
+          chooseDivs = iframeContent.contentWindow.document.querySelectorAll('.answerOption')
+          //获取所有answerOption
+          for(var t = 0; t < chooseDivs.length; t++) {
+              chooseInputs = chooseDivs[t].getElementsByTagName('input');
+              //获取Input的_correctanswer值
+              for(var i = 0; i < chooseInputs.length; i++) {
+                if(chooseInputs[i].getAttribute("_correctanswer") == '1') {
+                  //_correctanswer值为1，为正确答案
+                  console.log("第 " + t + " 选项正确")
+                  chooseInput = chooseInputs[i];
+                  break;
+              }
+            }
           }
         }
         return chooseInput
