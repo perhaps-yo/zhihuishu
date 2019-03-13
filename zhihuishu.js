@@ -171,10 +171,10 @@ function getElement(ele) {
         if (iframeContent) {
           chooseDivs = iframeContent.contentWindow.document.querySelectorAll('.answerOption')
           //获取所有answerOption
-          for(var t = 0; t < chooseDivs.length; t++) {
+          for(let t = 0; t < chooseDivs.length; t++) {
               chooseInputs = chooseDivs[t].getElementsByTagName('input');
               //获取Input的_correctanswer值
-              for(var i = 0; i < chooseInputs.length; i++) {
+              for(let i = 0; i < chooseInputs.length; i++) {
                 if(chooseInputs[i].getAttribute("_correctanswer") == '1') {
                   //_correctanswer值为1，为正确答案
                   console.log("第 " + t + " 选项正确")
